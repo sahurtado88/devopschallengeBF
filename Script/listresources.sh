@@ -28,7 +28,7 @@ do
     echo "region = ${region}"
     resource_arn=$(aws resourcegroupstaggingapi get-resources --region ${region} --query 'ResourceTagMappingList[].ResourceARN' --output text);
 
-    for arn in $resource_arns
+    for arn in $resource_arn
     do
         echo "resourse ARN: $arn
         resource_type=$(echo $arn | cut -d':' -f6)
@@ -36,60 +36,60 @@ do
 
         case $resource_type in
             ec2)
-                echo "Listing EC2 Instances in $aws_region" 
-                aws ec2 describe-instances --region $aws_region --output json
+                echo "Listing EC2 Instances in $region" 
+                aws ec2 describe-instances --region $region --output json
                 ;;
             rds)
-                echo "Listing RDS Instances in $aws_region"
-                aws rds describe-db-instances --region $aws_region --output json
+                echo "Listing RDS Instances in $region"
+                aws rds describe-db-instances --region $region --output json
                 ;;
             s3)
-                echo "Listing S3 Buckets in $aws_region"
-                aws s3api list-buckets --region $aws_region --output json
+                echo "Listing S3 Buckets in $region"
+                aws s3api list-buckets --region $region --output json
                 ;;
             cloudfront)
-                echo "Listing CloudFront Distributions in $aws_region"
-                aws cloudfront list-distributions --region $aws_region --output json
+                echo "Listing CloudFront Distributions in $region"
+                aws cloudfront list-distributions --region $region --output json
                 ;;
             vpc)
-                echo "Listing VPCs in $aws_region"
-                aws ec2 describe-vpcs --region $aws_region --output json
+                echo "Listing VPCs in $region"
+                aws ec2 describe-vpcs --region $region --output json
                 ;;
             iam)
-                echo "Listing IAM Users in $aws_region"
-                aws iam list-users --region $aws_region --output json
+                echo "Listing IAM Users in $region"
+                aws iam list-users --region $region --output json
                 ;;
             route53)
-                echo "Listing Route53 Hosted Zones in $aws_region"
-                aws route53 list-hosted-zones --region $aws_region --output json
+                echo "Listing Route53 Hosted Zones in $region"
+                aws route53 list-hosted-zones --region $region --output json
                 ;;
             cloudwatch)
-                echo "Listing CloudWatch Alarms in $aws_region"
-                aws cloudwatch describe-alarms --region $aws_region --output json
+                echo "Listing CloudWatch Alarms in $region"
+                aws cloudwatch describe-alarms --region $region --output json
                 ;;
             cloudformation)
-                echo "Listing CloudFormation Stacks in $aws_region"
-                aws cloudformation describe-stacks --region $aws_region --output json
+                echo "Listing CloudFormation Stacks in $region"
+                aws cloudformation describe-stacks --region $region --output json
                 ;;
             lambda)
-                echo "Listing Lambda Functions in $aws_region"
-                aws lambda list-functions --region $aws_region --output json
+                echo "Listing Lambda Functions in $region"
+                aws lambda list-functions --region $region --output json
                 ;;
             sns)
-                echo "Listing SNS Topics in $aws_region"
-                aws sns list-topics --region $aws_region --output json
+                echo "Listing SNS Topics in $region"
+                aws sns list-topics --region $region --output json
                 ;;
             sqs)
-                echo "Listing SQS Queues in $aws_region"
-                aws sqs list-queues --region $aws_region --output json
+                echo "Listing SQS Queues in $region"
+                aws sqs list-queues --region $region --output json
                 ;;
             dynamodb)
-                echo "Listing DynamoDB Tables in $aws_region"
-                aws dynamodb list-tables --region $aws_region --output json
+                echo "Listing DynamoDB Tables in $region"
+                aws dynamodb list-tables --region $region --output json
                 ;;
             ebs)
-                echo "Listing EBS Volumes in $aws_region"
-                aws ec2 describe-volumes --region $aws_region --output json
+                echo "Listing EBS Volumes in $region"
+                aws ec2 describe-volumes --region $region --output json
                 ;;
             *)
                 echo "resource no detail: "$resource_type"  
