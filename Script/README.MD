@@ -1,26 +1,30 @@
 # Description
 This Bash script automates the process of listing all resources in an AWS account across multiple regions. It currently supports fetching resources for the following AWS services:
 
-EC2 (Elastic Compute Cloud)
-RDS (Relational Database Service)
-S3 (Simple Storage Service)
-CloudFront
-VPC (Virtual Private Cloud)
-IAM (Identity and Access Management)
-Route53
-CloudWatch
-CloudFormation
-Lambda
-SNS (Simple Notification Service)
-SQS (Simple Queue Service)
-DynamoDB
-EBS (Elastic Block Store)
+- EC2 (Elastic Compute Cloud)
+- RDS (Relational Database Service)
+- S3 (Simple Storage Service)
+- CloudFront
+- VPC (Virtual Private Cloud)
+- IAM (Identity and Access Management)
+- Route53
+- CloudWatch
+- CloudFormation
+- Lambda
+- SNS (Simple Notification Service)
+- SQS (Simple Queue Service)
+- DynamoDB
+- EBS (Elastic Block Store)
+
+# Prerequesites
+
 
 # Usage
 To run this script, simply use the following command in the terminal from the directory where the script is located:
-´´´
+
+```
 ./listresources.sh
-´´´
+```
 
 This command will initiate the process of listing resources for the supported services across all AWS regions available in your account.
 
