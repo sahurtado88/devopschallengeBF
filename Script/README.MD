@@ -17,6 +17,51 @@ This Bash script automates the process of listing all resources in an AWS accoun
 - EBS (Elastic Block Store)
 
 # Prerequesites
+To successfully execute the listresources.sh script, the following prerequisites must be met:
+
+## AWS CLI Installed:
+
+The AWS Command Line Interface (CLI) must be installed on the machine where the script is run. You can install it using the following guide https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+## AWS CLI Configured:
+
+The AWS CLI must be properly configured with your AWS credentials and default region. This can be done using:
+```
+aws configure
+```
+You will need to provide your AWS Access Key ID, Secret Access Key, default region name, and default output format.
+
+## IAM Permissions:
+
+The AWS user whose credentials are used to run the script must have sufficient permissions to list resources across all the services specified in the script. This includes permissions like:
+
+- ec2:DescribeInstances
+- rds:DescribeDBInstances
+- s3:ListAllMyBuckets
+- cloudfront:ListDistributions
+- iam:ListUsers
+- route53:ListHostedZones
+- cloudwatch:DescribeAlarms
+- cloudformation:DescribeStacks
+- lambda:ListFunctions
+- sns:ListTopics
+- sqs:ListQueues
+- dynamodb:ListTables
+- ec2:DescribeVolumes
+- resourcegroupstaggingapi:GetResources
+
+
+The script is written in Bash, so it needs to be run in a Bash-compatible shell. Most Linux and macOS systems come with Bash pre-installed. On Windows, you can use Git Bash, WSL (Windows Subsystem for Linux), or a similar environment.
+
+## Execution Permissions:
+
+The script is written in Bash, so it needs to be run in a Bash-compatible shell. Most Linux and macOS systems come with Bash pre-installed. On Windows, you can use Git Bash, WSL (Windows Subsystem for Linux), or a similar environment.
+
+Ensure the script has execute permissions. If not, you can add execute permissions with the following command:
+```
+chmod +x listresources.sh
+```
+
 
 
 # Usage
