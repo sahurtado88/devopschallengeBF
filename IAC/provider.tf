@@ -6,12 +6,12 @@ terraform {
     }
   }
 
-  /*   backend "s3" {
-    bucket = "terraform-remote-backend-s3"
+  backend "s3" {
+    bucket = "sterraform-remote-backend-s3-sahr2024"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"
     dynamodb_table= "terraform_state_locks"
-  } */
+  } 
 }
 
 provider "aws" {
