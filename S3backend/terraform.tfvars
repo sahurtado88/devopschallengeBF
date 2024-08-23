@@ -1,6 +1,6 @@
 
-environment          = "Dev"
-iam_user = "terraform"
-bucket_name = "sahrdevchallenge2024"
-table_name= "DEVTabe"
-region = "us-east-1"
+environment = "dev"
+iam_user    = "terraform"
+bucket_name = "sterraform-remote-backend-s3-sahr2024"
+table_name  = "terraform_state_locks"
+region      = "us-east-1"
