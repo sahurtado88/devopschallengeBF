@@ -14,3 +14,5 @@ variable "elb_sg_id" {
   description = "value"
   type = string
 }
+
+variable "ssl_certificate_arn"{}

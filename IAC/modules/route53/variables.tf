@@ -1,7 +1,7 @@
 variable "domain_name" {
     description = "Domain name"
     type= string
-    default= "dev.com"
+
 }
 
 variable "elb_dns_name" {
@@ -11,7 +11,6 @@ variable "elb_dns_name" {
 }
 
 variable "subdomain" {
-    description = "Domain name"
+    description = "subdomain name"
     type= string
-    default= "dev.com"
 }

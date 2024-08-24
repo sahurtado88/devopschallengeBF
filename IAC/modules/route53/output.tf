@@ -5,3 +5,4 @@ output "zone_id" {
 output "elb_record" {
   value = aws_route53_record.elb.name
 }
+

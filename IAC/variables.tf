@@ -8,19 +8,9 @@ variable "environment" {
   default     = "dev"
 }
 
-variable "bucket" {
-  description = "bucket name configured per environment"
-  type        = string
-}
-
-variable "key" {
-  description = "key name configured per environment"
-  type        = string
-}
-variable "dynamodb_table" {
-  description = "dynamo table configured per environment"
-  type        = string
-
+variable "domain_name" {
+    description = "Domain name"
+    type= string
 }
 
 variable "vpc_cidr" {
@@ -37,3 +27,21 @@ variable "private_subnets_cidr" {
   description = "Subnet CIDRS"
   type        = list(string)
 }
+
+variable "elb_dns_name" {
+    description = "value"
+    type= string
+  
+}
+
+variable "subdomain" {
+    description = "subdomain name"
+    type= string
+}
+
+variable "elb_sg_id" {
+  description = "value"
+  type = string
+}
+
+variable "ssl_certificate_arn"{}
