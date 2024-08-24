@@ -9,8 +9,8 @@ variable "environment" {
 }
 
 variable "domain_name" {
-    description = "Domain name"
-    type= string
+  description = "Domain name"
+  type        = string
 }
 
 variable "vpc_cidr" {
@@ -29,19 +29,19 @@ variable "private_subnets_cidr" {
 }
 
 variable "elb_dns_name" {
-    description = "value"
-    type= string
-  
+  description = "value"
+  type        = string
+
 }
 
 variable "subdomain" {
-    description = "subdomain name"
-    type= string
+  description = "subdomain name"
+  type        = string
 }
 
 variable "elb_sg_id" {
   description = "value"
-  type = string
+  type        = string
 }
 
-variable "ssl_certificate_arn"{}
+variable "ssl_certificate_arn" {}

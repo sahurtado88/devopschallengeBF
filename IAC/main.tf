@@ -18,13 +18,13 @@ module "elb" {
 }
 
 module "acm" {
-  source = "./modules/acm"
+  source      = "./modules/acm"
   domain_name = var.domain_name
 }
 
 module "route53" {
   source       = "./modules/route53"
   elb_dns_name = module.elb.elb_dns_name
-  domain_name = var.domain_name
-  subdomain = var.subdomain
+  domain_name  = var.domain_name
+  subdomain    = var.subdomain
 }
